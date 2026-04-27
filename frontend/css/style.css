@@ -1,0 +1,168 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* BODY */
+body {
+  height: 100vh;
+  overflow: hidden; /* ❌ scroll remove */
+  background: linear-gradient(135deg, #eef6ff, #f8fbff);
+}
+
+/* CONTAINER */
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FORM BOX */
+.form-box {
+  width: 360px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+/* TOP */
+.form-top {
+  background: linear-gradient(135deg, #0d6efd, #5aa7ff);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.form-top.admin {
+  background: linear-gradient(135deg, #6f2de2, #4f16b8);
+}
+
+.form-top.register {
+  background: linear-gradient(135deg, #00a676, #008f66);
+}
+
+/* ICON */
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background: white;
+  color: #0d6efd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  font-size: 26px;
+}
+
+/* CONTENT */
+.form-content {
+  padding: 20px;
+}
+
+.form-content h2 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #64748b;
+}
+
+/* INPUT */
+.input-group {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.input-group span {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 10px 10px 38px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* BUTTON */
+.form-btn {
+  width: 100%;
+  padding: 11px;
+  border-radius: 8px;
+  border: none;
+  background: #0d6efd;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-btn.register-btn {
+  background: #00a676;
+}
+
+.form-btn.admin-btn {
+  background: #6f2de2;
+}
+
+/* ROW */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin: 8px 0;
+}
+
+/* LINK */
+.link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.link a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+/* DIVIDER */
+.divider {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 13px;
+}
+
+/* OUTLINE BUTTON */
+.outline-btn {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #0d6efd;
+  border-radius: 8px;
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* NOTE */
+.note {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 13px;
+}
+.input-group input:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.12);
+}

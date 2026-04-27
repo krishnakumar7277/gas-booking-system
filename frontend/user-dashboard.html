@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <h2 onclick="window.location.href='index.html'" style="cursor:pointer;">
+  GasBook
+</h2>
+
+  <a href="index.html">🏠 Home</a>  <!-- 🔥 NEW -->
+  <a href="#" onclick="setActive(this); showSection('dashboard')">📊 Dashboard</a>
+  <a href="#" onclick="setActive(this); showSection('book')">📦 Book Cylinder</a>
+  <a href="#" onclick="setActive(this); showSection('myBookings')">📋 My Bookings</a>
+  <a href="#" onclick="logout()">🚪 Logout</a>
+</div>
+
+<div class="main">
+  <div class="topbar">
+    <h1>User Dashboard</h1>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <!-- 🔥 DASHBOARD SECTION -->
+  <div id="dashboardSection">
+    <div class="cards">
+      <div class="card">
+        <h3>Total Bookings</h3>
+        <p id="totalBookings">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Pending</h3>
+        <p id="pendingBookings">0</p>
+      </div>
+
+      <div class="card">
+        <h3>Delivered</h3>
+        <p id="deliveredBookings">0</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔥 BOOK SECTION -->
+  <div id="bookSection" style="display:none;">
+    <div class="section">
+      <h2>Book New Cylinder</h2>
+
+      <select id="cylinderType">
+        <option value="">Select Cylinder Type</option>
+        <option value="14.2 KG Domestic Cylinder">14.2 KG Domestic Cylinder</option>
+        <option value="19 KG Commercial Cylinder">19 KG Commercial Cylinder</option>
+        <option value="5 KG Mini Cylinder">5 KG Mini Cylinder</option>
+      </select>
+
+      <input type="number" id="quantity" placeholder="Quantity" value="1">
+
+      <textarea id="deliveryAddress" placeholder="Delivery Address"></textarea>
+
+      <select id="paymentMode">
+        <option value="COD">Cash on Delivery</option>
+        <option value="Online">Online Payment</option>
+      </select>
+
+      <button onclick="createBooking()">Confirm Booking</button>
+    </div>
+  </div>
+
+  <!-- 🔥 MY BOOKINGS SECTION -->
+  <div id="myBookingsSection" style="display:none;">
+    <div class="section">
+      <h2>My Bookings</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Cylinder</th>
+            <th>Qty</th>
+            <th>Payment</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Invoice</th>
+          </tr>
+        </thead>
+        <tbody id="bookingTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f7fb;
+  display: flex;
+}
+
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background: #082f5f;
+  color: white;
+  padding: 25px;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.main {
+  flex: 1;
+  padding: 25px;
+}
+
+.topbar {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.topbar button,
+.section button {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  color: #555;
+}
+
+.card p {
+  font-size: 28px;
+  color: #0d6efd;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.section {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+  margin-bottom: 18px;
+  color: #082f5f;
+}
+
+.section input,
+.section select,
+.section textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.section textarea {
+  height: 80px;
+  resize: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background: #eef4ff;
+  color: #082f5f;
+}
+
+.status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #fff3cd;
+  color: #856404;
+}
+.home-btn {
+  background: white;
+  color: #0d6efd;
+  padding: 8px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.home-btn:hover {
+  background: #e6f0ff;
+}
+.sidebar a.active {
+  background: rgba(255,255,255,0.15);
+  padding-left: 10px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.main {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="form-box">
+    <div class="form-top admin">
+      <div class="icon-circle">🛡️</div>
+      <h1>Admin Login</h1>
+      <p>Login to access admin dashboard</p>
+    </div>
+
+    <div class="form-content">
+      <div class="input-group">
+        <span>📧</span>
+        <input type="email" id="adminEmail" placeholder="Admin Email">
+      </div>
+
+      <div class="input-group">
+        <span>🔒</span>
+        <input type="password" id="adminPassword" placeholder="Password">
+      </div>
+
+      <div class="form-row">
+        <label><input type="checkbox"> Remember me</label>
+        <a href="forgot-password.html">Forgot Password?</a>
+      </div>
+
+      <button class="form-btn admin-btn" onclick="adminLogin()">Login</button>
+
+      <div class="divider"><span>OR</span></div>
+
+      <a class="outline-btn admin-outline" href="login.html">User Login</a>
+
+      <div class="note purple">🛡️ Secure admin access only</div>
+    </div>
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>
