@@ -1,4 +1,4 @@
-const API = "http://localhost:5000/api/auth";
+const API = "https://gas-booking-system-od25.onrender.com/api/auth";
 
 // REGISTER
 async function register() {

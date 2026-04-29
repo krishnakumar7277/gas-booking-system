@@ -1,5 +1,4 @@
-const API = "http://localhost:5000/api/auth";
-
+const API = "https://gas-booking-system-od25.onrender.com/api/auth";
 // SEND OTP
 async function sendOtp() {
   const email = document.getElementById("email").value;

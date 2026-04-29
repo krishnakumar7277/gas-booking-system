@@ -12,6 +12,12 @@ const adminSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    resetOtp: {
+      type: String,
+    },
+    resetOtpExpire: {
+      type: Date,
+    },
     role: {
       type: String,
       default: "admin",

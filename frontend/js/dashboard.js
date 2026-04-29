@@ -1,4 +1,4 @@
-const BOOKING_API = "http://localhost:5000/api/bookings";
+const BOOKING_API = "https://gas-booking-system-od25.onrender.com/api/bookings";
 
 const token = localStorage.getItem("token");
 

@@ -295,3 +295,78 @@ exports.resetPassword = async (req, res) => {
     });
   }
 };
+// ADMIN FORGOT PASSWORD - SEND OTP
+exports.adminForgotPassword = async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    const admin = await Admin.findOne({ email });
+
+    if (!admin) {
+      return res.status(404).json({
+        success: false,
+        message: "Admin not found with this email",
+      });
+    }
+
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+
+    admin.resetOtp = otp;
+    admin.resetOtpExpire = Date.now() + 10 * 60 * 1000;
+    await admin.save();
+
+    await sendEmail(
+      admin.email,
+      "GasBook Admin Password Reset OTP",
+      `Your admin password reset OTP is ${otp}. This OTP is valid for 10 minutes.`
+    );
+
+    res.status(200).json({
+      success: true,
+      message: "Admin OTP sent to your email",
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Failed to send admin OTP",
+      error: error.message,
+    });
+  }
+};
+
+// ADMIN RESET PASSWORD
+exports.adminResetPassword = async (req, res) => {
+  try {
+    const { email, otp, newPassword } = req.body;
+
+    const admin = await Admin.findOne({
+      email,
+      resetOtp: otp,
+      resetOtpExpire: { $gt: Date.now() },
+    });
+
+    if (!admin) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid or expired OTP",
+      });
+    }
+
+    admin.password = await bcrypt.hash(newPassword, 10);
+    admin.resetOtp = undefined;
+    admin.resetOtpExpire = undefined;
+
+    await admin.save();
+
+    res.status(200).json({
+      success: true,
+      message: "Admin password reset successfully",
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Admin password reset failed",
+      error: error.message,
+    });
+  }
+};

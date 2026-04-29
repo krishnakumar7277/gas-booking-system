@@ -4,25 +4,35 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 
 const authRoutes = require("./routes/authRoutes");
-const bookingRoutes = require("./routes/bookingRoutes"); // ✅ NEW ADD
+const bookingRoutes = require("./routes/bookingRoutes");
 const adminRoutes = require("./routes/adminRoutes");
+
 dotenv.config();
 connectDB();
 
 const app = express();
 
-app.use(cors());
+/* ✅ CORS FIX (IMPORTANT for mobile + Netlify) */
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
+/* ✅ JSON */
 app.use(express.json());
 
+/* ✅ Test Route */
 app.get("/", (req, res) => {
   res.send("Online Gas Booking Management System Backend Running with MongoDB");
 });
 
-// ROUTES
+/* ✅ ROUTES */
 app.use("/api/auth", authRoutes);
-app.use("/api/bookings", bookingRoutes); // ✅ NEW ADD
+app.use("/api/bookings", bookingRoutes);
 app.use("/api/admin", adminRoutes);
 
+/* ✅ PORT */
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

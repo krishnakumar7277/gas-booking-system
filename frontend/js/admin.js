@@ -1,4 +1,4 @@
-const ADMIN_API = "http://localhost:5000/api/admin";
+const ADMIN_API = "https://gas-booking-system-od25.onrender.com/api/admin";
 
 const adminToken = localStorage.getItem("adminToken");
 

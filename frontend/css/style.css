@@ -166,3 +166,27 @@ body {
   border-color: #0d6efd;
   box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.12);
 }
+/* MOBILE RESPONSIVE */
+@media (max-width: 500px) {
+  .form-box {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .form-top h1 {
+    font-size: 20px;
+  }
+
+  .form-content h2 {
+    font-size: 18px;
+  }
+
+  .form-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .input-group input {
+    font-size: 14px;
+  }
+}
